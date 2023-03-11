@@ -101,13 +101,15 @@ app.get('/deletecontact',function(req,res){
     //     return res.redirect('back');
     // })
 
-    Contact.findByIdAndDelete({})
-    .then(function(id){
+Contact.findByIdAndDelete(id)
+    .then(function(){
+        console.log("Successful in deleting the contact");
         return res.redirect('back');
     })
     .catch(function(err){
         console.log('Error in deleting data',err);
     });
+    
 
 });
 
